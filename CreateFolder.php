@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>CreateFolder</title>
+</head>
+
+<body>
+
+<?php
+if (isset ($_POST['creat_folder'])){
+
+
+	$folder_Name = $_POST['folderToCreate'];
+	$folder_Path = 'uploads/'.$folder_Name;
+
+	if(mkdir($folder_Path , 0777)) {
+		echo "The folder $folder_Name has been created!!";
+	}else{
+		echo "Failed to create the folder $folder_Name!!";
+	} 
+
+}
+
+?>
+
+<p>
+<a href="index.php">Back to First Page</a>
+</p>
+
+</body>
+
+
+
+</html>
